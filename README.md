@@ -75,3 +75,27 @@ flowchart LR
 ---
 
 ## 🗂️ Project Structure
+---
+
+## 🔧 Tech Stack
+
+<div align="center">
+
+| Component | Tool / Framework |
+|:---|:---|
+| 🖼️ **Image Classification** | ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white) Custom CNN |
+| 🔍 **OCR** | ![EasyOCR](https://img.shields.io/badge/EasyOCR-1E90FF?style=flat-square) |
+| 🧠 **Vision-Language Model** | ![LLaVA](https://img.shields.io/badge/LLaVA--v1.6--Mistral--7B-FFD21E?style=flat-square) (HuggingFace) |
+| 🔊 **Text-to-Speech** | ![CSM-1B](https://img.shields.io/badge/CSM--1B-Sesame-9146FF?style=flat-square) (HuggingFace) |
+| ⚙️ **Pipeline Versioning** | ![DVC](https://img.shields.io/badge/DVC-945DD6?style=flat-square&logo=dvc&logoColor=white) + ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) |
+| 🎨 **Data Augmentation** | ![torchvision](https://img.shields.io/badge/torchvision-EE4C2C?style=flat-square) transforms |
+| 📊 **Evaluation** | ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white) |
+| ☁️ **Environment** | ![Colab](https://img.shields.io/badge/Colab-F9AB00?style=flat-square&logo=googlecolab&logoColor=white) + ![Drive](https://img.shields.io/badge/Drive-4285F4?style=flat-square&logo=googledrive&logoColor=white) |
+
+</div>
+
+---
+
+## 🏗️ Model Architecture — Flip Classifier
+
+A custom **4-block CNN** built in PyTorch to classify whether an input image is correctly oriented before passing it downstream.
