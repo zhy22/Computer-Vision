@@ -94,8 +94,134 @@ flowchart LR
 
 </div>
 
+
+<table>
+<tr>
+<td width="50%">
+
+### ⚙️ Training Config
+- **Optimiser:** Lion (`lion-pytorch`)
+- **Learning rate:** `3e-4`
+- **Early stopping:** patience = 2
+- **Batch size:** 64
+- **Image size:** 96×96
+- **Max epochs:** 50
+
+</td>
+<td width="50%">
+
+### 🎨 Augmentation
+- `RandomHorizontalFlip`
+- `RandomRotation`
+- `ColorJitter`
+- Normalisation to ImageNet stats
+
+</td>
+</tr>
+</table>
+
+---
+
+## ⚙️ DVC Pipeline Stages
+
+```yaml
+stages:
+  ocr:
+    cmd: python src/run_ocr.py
+    deps: [src/run_ocr.py, data/raw/page.jpg]
+    outs: [data/processed/ocr_result.json]
+  test:
+    cmd: python src/test_ocr.py
+    deps: [src/test_ocr.py, data/processed/ocr_result.json]
+```
+
+Reproduce the full pipeline with one command:
+
+```bash
+dvc repro
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the repo
+```bash
+git clone https://github.com/your-username/book-pipeline.git
+cd book-pipeline
+```
+
+### 2️⃣ Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3️⃣ Add your input image
+
 ---
 
 ## 🏗️ Model Architecture — Flip Classifier
 
 A custom **4-block CNN** built in PyTorch to classify whether an input image is correctly oriented before passing it downstream.
+### 4️⃣ Run the pipeline
+```bash
+dvc repro
+```
+
+### 5️⃣ Play the output audio
+
+---
+
+## ✅ Tests
+
+Unit tests validate that OCR outputs exist and are non-empty:
+
+```bash
+python src/test_ocr.py
+```
+
+---
+
+## 📊 Evaluation — Flip Classifier
+
+Model performance is evaluated on a held-out test set using:
+
+<table>
+<tr>
+<td width="33%" align="center">
+
+### 📋 Classification Report
+Precision · Recall · F1-score per class
+
+</td>
+<td width="33%" align="center">
+
+### 🟦 Confusion Matrix
+Seaborn heatmap of predictions vs. truth
+
+</td>
+<td width="33%" align="center">
+
+### 📈 ROC Curve
+AUC score + threshold analysis
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📋 Requirements
+
+![torch](https://img.shields.io/badge/torch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+![torchvision](https://img.shields.io/badge/torchvision-EE4C2C?style=flat-square)
+![transformers](https://img.shields.io/badge/transformers-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
+![accelerate](https://img.shields.io/badge/accelerate-FFAA00?style=flat-square)
+![easyocr](https://img.shields.io/badge/easyocr-1E90FF?style=flat-square)
+![lion-pytorch](https://img.shields.io/badge/lion--pytorch-9146FF?style=flat-square)
+![dvc](https://img.shields.io/badge/dvc-945DD6?style=flat-square&logo=dvc&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
+![matplotlib](https://img.shields.io/badge/matplotlib-11557C?style=flat-square)
+![seaborn](https://img.shields.io/badge/seaborn-4C72B0?style=flat-square)
+![Pillow](https://img.shields.io/badge/Pillow-306998?style=flat-square)
+![tqdm](https://img.shields.io/badge/tqdm-FFC107?style=flat-square)
