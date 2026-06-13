@@ -10,7 +10,7 @@
 [![Colab](https://img.shields.io/badge/Google%20Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)](https://colab.research.google.com/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](#)
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=945DD6&center=true&vCenter=true&width=720&lines=Custom+CNN+orientation+classifier+📐;EasyOCR+%2B+LLaVA-1.6+text+extraction+🧠;CSM-1B+neural+text-to-speech+🔊;Fully+reproducible+with+DVC+%2B+Git+⚙️" alt="Typing animation" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=945DD6&center=true&vCenter=true&width=720&lines=Custom+CNN+orientation+classifier;EasyOCR+%2B+LLaVA-1.6+text+extraction;CSM-1B+neural+text-to-speech;Fully+reproducible+with+DVC+%2B+Git+" alt="Typing animation" />
 
 </div>
 
